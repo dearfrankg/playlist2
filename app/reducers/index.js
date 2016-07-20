@@ -71,10 +71,32 @@ const search = (state = initialSearchState, action) => {
 				}
 			})
 
+    case types.RESET_SEARCH:
+			return initialSearchState
 
+    case types.VIEW_VIDEO_STARTED:
+			return Object.assign({}, state, {
+				isViewingVideo: true,
+				viewedVideo: null
+			})
 
+		case types.VIEW_VIDEO_RESULT:
+			return Object.assign({}, state, {
+				isViewingVideo: false,
+				viewedVideo: action.data
+			})
 
+		case types.VIEW_VIDEO_FAILED:
+			return Object.assign({}, state, {
+				isViewingVideo: false,
+				viewedVideo: null
+			})
 
+		case types.VIEW_VIDEO_UNLOAD:
+			return Object.assign({}, state, {
+				isViewingVideo: false,
+				viewedVideo: null
+			})
 
     default:
       return state

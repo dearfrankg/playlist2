@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -5,7 +6,9 @@ import {
 } from 'react-native'
 
 const Playlists = () => (
-  <Text>Playlists</Text>
+  <View>
+    <Text>Playlists</Text>
+  </View>
 )
 
 export default Playlists

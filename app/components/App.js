@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 import {
   AppRegistry,
+  Navigator,
   StyleSheet,
   Text,
   View
@@ -18,7 +19,7 @@ class App extends Component {
     let cmp = null
 		if (this.props.search.isViewingResult) {
 			cmp = (
-				<Scene />
+        <Scene {...this.props} />
 			)
     } else {
       cmp = (
@@ -28,8 +29,8 @@ class App extends Component {
 
     return (
       <View style={styles.container}>
-				{cmp}
-			</View>
+        {cmp}
+      </View>
     )
   }
 }
@@ -47,9 +48,7 @@ export default connect(
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
